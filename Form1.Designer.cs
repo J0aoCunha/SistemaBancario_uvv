@@ -59,7 +59,7 @@
             label15 = new Label();
             txtContaDestino = new TextBox();
             textBox_conta_destino = new TextBox();
-            label = new Label();
+            ValorEmconta = new Label();
             label17 = new Label();
             lblClienteInfo = new Label();
             SuspendLayout();
@@ -324,14 +324,14 @@
             textBox_conta_destino.Size = new Size(139, 23);
             textBox_conta_destino.TabIndex = 34;
             // 
-            // label
+            // ValorEmconta
             // 
-            label.AutoSize = true;
-            label.Location = new Point(93, 746);
-            label.Name = "label";
-            label.Size = new Size(44, 15);
-            label.TabIndex = 36;
-            label.Text = "R$ 0,00";
+            ValorEmconta.AutoSize = true;
+            ValorEmconta.Location = new Point(93, 746);
+            ValorEmconta.Name = "ValorEmconta";
+            ValorEmconta.Size = new Size(44, 15);
+            ValorEmconta.TabIndex = 36;
+            ValorEmconta.Text = "R$ 0,00";
             // 
             // label17
             // 
@@ -356,7 +356,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(369, 958);
             Controls.Add(lblClienteInfo);
-            Controls.Add(label);
+            Controls.Add(ValorEmconta);
             Controls.Add(label17);
             Controls.Add(textBox_conta_destino);
             Controls.Add(txtContaDestino);
@@ -428,7 +428,7 @@
         private Label label15;
         private TextBox txtContaDestino;
         private TextBox textBox_conta_destino;
-        private Label label;
+        private Label ValorEmconta;
         private Label label17;
         private Label lblClienteInfo;
     }

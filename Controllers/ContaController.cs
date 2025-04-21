@@ -52,10 +52,10 @@ namespace SistemaBancarioUVV.Controllers
             }
 
             // Subtrair o valor da conta de origem
-            origem.Saldo -= valor;
+            origem.Saldo = origem.Saldo - valor;
 
             // Adicionar o valor à conta de destino
-            destino.Saldo += valor;
+            destino.Saldo = destino.Saldo+valor;
         }
 
     }

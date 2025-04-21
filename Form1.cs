@@ -127,6 +127,8 @@ namespace SistemaBancario_uvv
 
         private void BtnTransferir_Click(object sender, EventArgs e)
         {
+            Conta contaAtual = clienteController.BuscarContaPorNumero(txt_NumeroConta.Text);
+
             if (contaAtual == null)
             {
                 MessageBox.Show("Selecione uma conta de origem válida.");
@@ -145,10 +147,10 @@ namespace SistemaBancario_uvv
             double valor = double.Parse(txtValorTransferencia.Text);
 
             // Realizar a transferência
-            contaController.Transferir(contaAtual, contaDestino, valor);
+            contaController.Transferir(contaDestino, contaAtual, valor);
 
             // Atualizar o saldo da conta de origem na interface
-            label.Text = $"R$ {contaAtual.Saldo:0.00}";
+            ValorEmconta.Text = $"R$ {contaAtual.Saldo:0.00}";
 
             MessageBox.Show("Transferência realizada com sucesso!");
         }
@@ -160,11 +162,11 @@ namespace SistemaBancario_uvv
 
             if (contaAtual != null)
             {
-                label.Text = $"R$ {contaAtual.Saldo:0.00}";
+                ValorEmconta.Text = $"R$ {contaAtual.Saldo:0.00}";
             }
             else
             {
-                label.Text = "Conta não encontrada.";
+                ValorEmconta.Text = "Conta não encontrada.";
             }
         }
     }

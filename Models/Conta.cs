@@ -31,4 +31,22 @@ public class Conta
 
         Saldo -= valor;
     }
+
+    public virtual void Transferir(Conta contaDestino, double valor)
+    {
+        if (contaDestino == null)
+        {
+            throw new ArgumentNullException(nameof(contaDestino), "A conta de destino não pode ser nula.");
+        }
+        if (valor <= 0)
+        {
+            throw new ArgumentException("O valor da transferência deve ser maior que zero.");
+        }
+        if (valor > Saldo)
+        {
+            throw new InvalidOperationException("Saldo insuficiente para a transferência.");
+        }
+        Sacar(valor);
+        contaDestino.Depositar(valor);
+    }
 }
